@@ -11,6 +11,19 @@ npx expo start
 ```
 The backend must be running; see the README.
 
+### Sign your commits (required)
+`main` only accepts signed commits. Set this up once per computer (Git 2.34+):
+```bash
+ssh-keygen -t ed25519 -C "you@example.com"          # skip if you already have a key
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true
+git config --global user.email "you@example.com"    # must be a verified email on your GitHub account
+```
+Then on GitHub: **Settings → SSH and GPG keys → New SSH key**, set **Key type** to **Signing Key**, paste
+the contents of `~/.ssh/id_ed25519.pub`. A key added only as an *Authentication Key* leaves commits **Unverified**.
+Check with `git log --show-signature -1`.
+
 ## 1. Start from an issue
 Every change needs a GitHub issue, made from the **Bug report** or **Feature request** template.
 If it touches reminders, notifications, medication data, caregiver alerts or sign-in,
@@ -23,7 +36,12 @@ git pull origin main
 git checkout -b feature/12-snooze-button   # <type>/<issue>-<short-description>
 ```
 Types: `feature`, `fix`, `hotfix`, `docs`, `chore`. Lowercase, words joined by hyphens.
-Keep the branch under 3 days old and run `git pull --rebase origin main` daily.
+Keep the branch under 3 days old and rebase it onto the latest `main` before review:
+```bash
+git fetch origin
+git rebase origin/main
+git push --force-with-lease      # never plain --force: it refuses if someone else pushed to your branch
+```
 Never commit straight to `main`; it is protected and the push will be rejected.
 
 ## 3. Commit using Conventional Commits
@@ -39,6 +57,7 @@ git push -u origin feature/12-snooze-button
 Open the PR on GitHub, write `Closes #12` in the description and complete the checklist.
 
 ## 5. Get it merged
+- Every commit is signed (shows **Verified**) and the branch is rebased onto the latest `main`.
 - The `build` and `dependency-review` checks must pass.
 - One approval from a teammate who is not the author.
 - Safety-critical files (listed in `.github/CODEOWNERS`) also need a code owner's approval.

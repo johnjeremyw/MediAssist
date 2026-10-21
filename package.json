@@ -4,7 +4,7 @@
   "main": "index.js",
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",
-    "expo": "~54.0.0",
+    "expo": "~54.0.37",
     "expo-notifications": "~0.32.17",
     "expo-status-bar": "~3.0.8",
     "react": "19.1.0",

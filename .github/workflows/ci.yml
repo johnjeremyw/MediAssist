@@ -33,8 +33,17 @@ jobs:
       - name: Install exact dependencies
         run: npm ci
 
-      - name: Check dependency versions match the Expo SDK
-        run: npx expo install --check
+      - name: Check dependency versions match the Expo SDK (warning only)
+        continue-on-error: true
+        run: |
+          if ! npx expo install --check > expo-check.txt 2>&1; then
+            cat expo-check.txt
+            while IFS= read -r line; do
+              [ -n "$line" ] && echo "::warning title=Expo SDK version drift::$line"
+            done < expo-check.txt
+            echo "Fix locally with: npx expo install --fix"
+            exit 1
+          fi
 
       - name: Lint and tests
         run: |

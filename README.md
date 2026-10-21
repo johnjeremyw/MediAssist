@@ -1,5 +1,10 @@
 # MediAssist — V1 Frontend (Expo / React Native)
 
+> **Branching model: GitHub Flow.** `main` is protected and always releasable; all work happens on short-lived
+> `<type>/<issue>-<short-description>` branches (e.g. `feature/12-snooze-button`) merged by reviewed, squash-merged
+> pull request. Releases are tags (`v1.1.0`) on `main`. Read [CONTRIBUTING.md](CONTRIBUTING.md) before your first PR;
+> the full SCM Plan is in [docs/SCM-Plan.pdf](docs/SCM-Plan.pdf).
+
 Implementation of the five V1 screens from the SFE 4010A CAT 1 report, for elderly users (65+), accessibility-first. Now wired to a live backend (see `../MediAssist-backend` or wherever you've placed it) instead of static mock data.
 
 ## Run it

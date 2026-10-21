@@ -1,0 +1,17 @@
+# Safety-critical files: a defect here can mean a missed or wrong dose.
+# Any pull request that changes them needs approval from a code owner who is not the author.
+/screens/ReminderScreen.js            @johnjeremyw @WainainaB
+/screens/AddMedicationScreen.js       @johnjeremyw @WainainaB
+/screens/EditMedicationScreen.js      @johnjeremyw @WainainaB
+/screens/MedicationDetailScreen.js    @johnjeremyw @WainainaB
+/screens/CaregiverScreen.js           @johnjeremyw @WainainaB
+/push.js                              @johnjeremyw @WainainaB
+/api.js                               @johnjeremyw @WainainaB
+/AuthContext.js                       @johnjeremyw @WainainaB
+/formatters.js                        @johnjeremyw @WainainaB
+
+# Accessibility constraints live here
+/theme.js                             @johnjeremyw @WainainaB
+
+# SCM configuration
+/.github/                             @johnjeremyw

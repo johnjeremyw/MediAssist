@@ -1,17 +1,18 @@
 # Safety-critical files: a defect here can mean a missed or wrong dose.
-# Any pull request that changes them needs approval from a code owner who is not the author.
-/screens/ReminderScreen.js            @johnjeremyw @WainainaB
-/screens/AddMedicationScreen.js       @johnjeremyw @WainainaB
-/screens/EditMedicationScreen.js      @johnjeremyw @WainainaB
-/screens/MedicationDetailScreen.js    @johnjeremyw @WainainaB
-/screens/CaregiverScreen.js           @johnjeremyw @WainainaB
-/push.js                              @johnjeremyw @WainainaB
-/api.js                               @johnjeremyw @WainainaB
-/AuthContext.js                       @johnjeremyw @WainainaB
-/formatters.js                        @johnjeremyw @WainainaB
+# Any pull request that changes them needs approval from a code owner who is not the author,
+# so every path lists all three developers.
+/screens/ReminderScreen.js            @johnjeremyw @WainainaB @rahmayub0
+/screens/AddMedicationScreen.js       @johnjeremyw @WainainaB @rahmayub0
+/screens/EditMedicationScreen.js      @johnjeremyw @WainainaB @rahmayub0
+/screens/MedicationDetailScreen.js    @johnjeremyw @WainainaB @rahmayub0
+/screens/CaregiverScreen.js           @johnjeremyw @WainainaB @rahmayub0
+/push.js                              @johnjeremyw @WainainaB @rahmayub0
+/api.js                               @johnjeremyw @WainainaB @rahmayub0
+/AuthContext.js                       @johnjeremyw @WainainaB @rahmayub0
+/formatters.js                        @johnjeremyw @WainainaB @rahmayub0
 
 # Accessibility constraints live here
-/theme.js                             @johnjeremyw @WainainaB
+/theme.js                             @johnjeremyw @WainainaB @rahmayub0
 
 # SCM configuration
-/.github/                             @johnjeremyw
+/.github/                             @johnjeremyw @WainainaB @rahmayub0
